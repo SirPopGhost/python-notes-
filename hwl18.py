@@ -31,7 +31,5 @@ def main():
     file_name = "numbers.file"
     file_name_2 = "newnumbers.file"
     write_to_file(file_name, file_name_2)
-    first_half, second_half = read_from_file(file_name)
-    print(first_half, second_half)
 
 main()
