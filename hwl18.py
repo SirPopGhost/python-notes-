@@ -8,7 +8,7 @@ def write_to_file(output_file, output_file_2):
         first_half, second_half = read_from_file(file_name)
         epic_list = second_half + first_half
         for replacing in epic_list:
-            string = str(replacing)
+            string = str(replacing) + "\n"
             file_2.writelines(string)
     return
 
