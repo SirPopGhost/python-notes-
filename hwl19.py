@@ -25,13 +25,19 @@ def write_to_file(output_file, data):
     with open(output_file, 'w') as file:
         file.write(json.dumps(data))
 
+def read_test(input_file):
+    with open(input_file, 'r') as file:
+        data = file.read()
+        json_file = json.loads(data)
+        return json_file
 
 
 def main():
     file_name = "student_data.txt"
-    file_name_2 = 'student_dict.txt'
+    file_name_2 = 'student_dict.json'
     student_dict = read_from_file(file_name)
     write_to_file(file_name_2, student_dict)
-    print(student_dict)
-
+    read_file = read_test(file_name_2)
+    print(type(read_file))
+    
 main()
