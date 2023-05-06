@@ -3,70 +3,70 @@
         "name": "Alice Smith",
         "age": 19,
         "gender": "Female",
-        "is_enrolled": True,
+        "is_enrolled": true,
         "gpa": 3.8
     },
     {
         "name": "Bob Johnson",
         "age": 20,
         "gender": "Male",
-        "is_enrolled": True,
+        "is_enrolled": true,
         "gpa": 3.5
     },
     {
         "name": "Charlie Brown",
         "age": 18,
         "gender": "Male",
-        "is_enrolled": False,
+        "is_enrolled": false,
         "gpa": 3.2
     },
     {
         "name": "Diana Martinez",
         "age": 21,
         "gender": "Female",
-        "is_enrolled": True,
+        "is_enrolled": true,
         "gpa": 4.0
     },
     {
         "name": "Ethan Lee",
         "age": 18,
         "gender": "Male",
-        "is_enrolled": True,
+        "is_enrolled": true,
         "gpa": 3.6
     },
     {
         "name": "Fiona Chen",
         "age": 20,
         "gender": "Female",
-        "is_enrolled": True,
+        "is_enrolled": true,
         "gpa": 3.9
     },
     {
         "name": "George Kim",
         "age": 19,
         "gender": "Male",
-        "is_enrolled": False,
+        "is_enrolled": false,
         "gpa": 2.8
     },
     {
         "name": "Hannah Park",
         "age": 18,
         "gender": "Female",
-        "is_enrolled": True,
+        "is_enrolled": true,
         "gpa": 3.7
     },
     {
         "name": "Isaac Wang",
         "age": 19,
         "gender": "Male",
-        "is_enrolled": True,
+        "is_enrolled": true,
         "gpa": 3.4
     },
     {
         "name": "Julia Nguyen",
         "age": 20,
         "gender": "Female",
-        "is_enrolled": True,
+        "is_enrolled": true,
         "gpa": 3.8
     }
 ]
