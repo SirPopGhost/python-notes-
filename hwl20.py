@@ -45,7 +45,7 @@ def main():
         average_age_list.append(total_age)
     total_amount = len(average_age_list)
     total_sum = sum(average_age_list)
-    average_age = total_sum / total_amount  # Answer for number 1
+    average_age = total_sum / total_amount
     for gender_ratio in dict_library:
         total_gender = gender_ratio.get('gender')
         gender_list.append(total_gender)
@@ -68,7 +68,6 @@ def main():
     for value_Min in Min_list:
         if value_Min < minimum:
             minimum = value_Min
-    # Answer for three
     for enrollment in dict_library:
         total_enrollments = enrollment.get('is_enrolled')
         enrollment_list.append(total_enrollments)
