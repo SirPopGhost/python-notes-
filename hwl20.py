@@ -28,25 +28,22 @@ def write_to_file(output_file, data):
         file.write(data)
 
 
-def main():
-    file_name = "students_data.json"
-    file_name_2 = "average_demographics.txt"
-    dict_library = read_from_file(file_name)
+def average_function_calculator(dict_age):
     average_age_list = []
-    gender_list = []
-    Males = []
-    Females = []
-    Max_list = []
-    Min_list = []
-    enrollment_list = []
-    finalized_list = []
-    for student_age in dict_library:
+    for student_age in dict_age:
         total_age = student_age.get('age')
         average_age_list.append(total_age)
     total_amount = len(average_age_list)
     total_sum = sum(average_age_list)
     average_age = total_sum / total_amount
-    for gender_ratio in dict_library:
+    return average_age
+
+
+def gender_ratio_calculator(dict_gender):
+    gender_list = []
+    Males = []
+    Females = []
+    for gender_ratio in dict_gender:
         total_gender = gender_ratio.get('gender')
         gender_list.append(total_gender)
     for gender in gender_list:
@@ -56,25 +53,47 @@ def main():
             Females.append(gender)
     per_Male = (f"{len(Males) * 10}%")
     per_Female = (f"{len(Females) * 10}%")
-    for total_gpa in dict_library:
-        total_gender = total_gpa.get('age')
-        Max_list.append(total_gender)
-        Min_list.append(total_gender)
-    maximum = Max_list[0]
-    for value_Max in Max_list:
+    return per_Male, per_Female
+
+
+def gpa_value_calculator(dict_gpa):
+    Value_list = []
+    for total_gpa in dict_gpa:
+        total_gpa = total_gpa.get('gpa')
+        Value_list.append(total_gpa)
+        Value_list.append(total_gpa)
+    maximum = Value_list[0]
+    for value_Max in Value_list:
         if value_Max > maximum:
             maximum = value_Max
-    minimum = Min_list[0]
-    for value_Min in Min_list:
+    minimum = Value_list[0]
+    for value_Min in Value_list:
         if value_Min < minimum:
             minimum = value_Min
-    for enrollment in dict_library:
+    return maximum, minimum
+
+
+def enrollment_checker(dict_enrolled):
+    enrollment_list = []
+    finalized_list = []
+    for enrollment in dict_enrolled:
         total_enrollments = enrollment.get('is_enrolled')
         enrollment_list.append(total_enrollments)
     for enrolled in enrollment_list:
-        if enrolled is True:
+        if enrolled:
             finalized_list.append(enrolled)
     students_enrolled = len(finalized_list)
+    return students_enrolled
+
+
+def main():
+    file_name = "students_data.json"
+    file_name_2 = "average_demographics.txt"
+    dict_library = read_from_file(file_name)
+    average_age = average_function_calculator(dict_library)
+    per_Male, per_Female = gender_ratio_calculator(dict_library)
+    maximum, minimum = gpa_value_calculator(dict_library)
+    students_enrolled = enrollment_checker(dict_library)
     info = (f"The total average age for all students is {average_age}.\nPercetange of all males is {per_Male} and all females is {per_Female}.\nThe maximum gpa for all of the students is {maximum} and the minimium is {minimum}.\nTotal number of students that are enrolled in the class is {students_enrolled} students.")
     write_to_file(file_name_2, info)
 
