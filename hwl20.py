@@ -40,50 +40,39 @@ def average_function_calculator(dict_age):
 
 
 def gender_ratio_calculator(dict_gender):
-    gender_list = []
-    Males = []
-    Females = []
+    malecount = 0
+    femalecount = 0
     for gender_ratio in dict_gender:
-        total_gender = gender_ratio.get('gender')
-        gender_list.append(total_gender)
-    for gender in gender_list:
+        gender = gender_ratio.get('gender')
         if gender == 'Male':
-            Males.append(gender)
+            malecount = malecount + 1
         else:
-            Females.append(gender)
-    per_Male = (f"{len(Males) * 10}%")
-    per_Female = (f"{len(Females) * 10}%")
-    return per_Male, per_Female
+            femalecount = femalecount + 1
+    per_male = (f"{(malecount) * 10}%")
+    per_female = (f"{(femalecount) * 10}%")
+    return per_male, per_female
 
 
 def gpa_value_calculator(dict_gpa):
-    Value_list = []
+    minimum = dict_gpa[0].get('gpa')
+    maximum = dict_gpa[0].get('gpa')
     for total_gpa in dict_gpa:
-        total_gpa = total_gpa.get('gpa')
-        Value_list.append(total_gpa)
-        Value_list.append(total_gpa)
-    maximum = Value_list[0]
-    for value_Max in Value_list:
-        if value_Max > maximum:
-            maximum = value_Max
-    minimum = Value_list[0]
-    for value_Min in Value_list:
-        if value_Min < minimum:
-            minimum = value_Min
+        gpa = total_gpa.get('gpa')
+        if gpa > maximum:
+            maximum = gpa
+        if gpa < minimum:
+            minimum = gpa
     return maximum, minimum
 
 
 def enrollment_checker(dict_enrolled):
-    enrollment_list = []
-    finalized_list = []
+    enrolled = dict_enrolled.get('is_enrolled')
     for enrollment in dict_enrolled:
-        total_enrollments = enrollment.get('is_enrolled')
-        enrollment_list.append(total_enrollments)
-    for enrolled in enrollment_list:
-        if enrolled:
-            finalized_list.append(enrolled)
-    students_enrolled = len(finalized_list)
-    return students_enrolled
+        if enrolled is True:
+            enrolled = enrollment
+    print(enrolled)
+
+
 
 
 def main():
@@ -91,10 +80,10 @@ def main():
     file_name_2 = "average_demographics.txt"
     dict_library = read_from_file(file_name)
     average_age = average_function_calculator(dict_library)
-    per_Male, per_Female = gender_ratio_calculator(dict_library)
+    per_male, per_female = gender_ratio_calculator(dict_library)
     maximum, minimum = gpa_value_calculator(dict_library)
-    students_enrolled = enrollment_checker(dict_library)
-    info = (f"The total average age for all students is {average_age}.\nPercetange of all males is {per_Male} and all females is {per_Female}.\nThe maximum gpa for all of the students is {maximum} and the minimium is {minimum}.\nTotal number of students that are enrolled in the class is {students_enrolled} students.")
+    enrollment_checker(dict_library)
+    info = (f"The total average age for all students is {average_age}.\nPercetange of all males is {per_male} and all females is {per_female}.\nThe maximum gpa for all of the students is {maximum} and the minimium is {minimum}.\nTotal number of students that are enrolled in the class is students.")
     write_to_file(file_name_2, info)
 
 

@@ -1,4 +1,4 @@
 The total average age for all students is 19.2.
 Percetange of all males is 50% and all females is 50%.
 The maximum gpa for all of the students is 4.0 and the minimium is 1.8.
-Total number of students that are enrolled in the class is 8 students.
+Total number of students that are enrolled in the class is students.

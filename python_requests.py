@@ -26,12 +26,22 @@ either in
 500 - 501 server too busy, 503 - bad gateway- "The server messed up"
 """
 import requests
+import math
+import hwl20
 
 try:
-    response = requests.get("https://api.github.com/events")
+    response = requests.get("https://api.covidtracking.com",data={'name': 'sam'})
     print(f"API returned: {response.json()}")
-except exception as e:
+    json_data = response.json()
+except Exception as e:
     print(f"Error: {e} happened while calling the api.")
+
+try:
+    x = 1/0
+except ZeroDivisionError as e:
+    print(e)
+# hwl20.write_to_file("events.json", str(json_data))
+
 
 
 
