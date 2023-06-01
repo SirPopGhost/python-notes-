@@ -1,5 +1,5 @@
 import json
-from datetime import date
+import datetime
 
 def read_from_file(input_file):
     with open(input_file) as file:
@@ -7,12 +7,17 @@ def read_from_file(input_file):
         json_file = json.loads(data_file)
         return json_file
     
+
+
 def main():
     birth_dates = "datafile_birthdays.json"
     birth_file = read_from_file(birth_dates)
-    today = date.today()
+    current_time = datetime.datetime.now()
     print(birth_file)
-    print(today)
+    month = current_time.month
+    day = current_time.day
+    print(type(month), type(day))
+
 
 main()
 

@@ -1,10 +1,12 @@
 [
 {
-    "Name": "Bob Jackson",
-    "Birthdate": "5/26"
+    "name": "Bob Jackson",
+    "birthdate": "5-26",
+    "phone_number": "333-333-3333"
 },
 {
-    "Name": "Justin Hillton",
-    "Birthdate": "5/27" 
+    "name": "Justin Hillton",
+    "birthdate": "5-27",
+    "phone_number": "444-444-4444"
 }
 ]
