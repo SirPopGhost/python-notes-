@@ -26,6 +26,13 @@ def list_to_dict(list_data):
             student_dict[split_values[0]] = split_values[1]
         dict_list.append(student_dict)
     return dict_list
+
+def dict_conv(output_file):
+    with open(output_file, 'r') as dict_file:
+        read_file = dict_file.read()
+        dict_list = json.loads(read_file)
+        jane_smith = dict_list[1]
+        return jane_smith
             
         
 def main():
@@ -33,6 +40,7 @@ def main():
     read_file = read_from_file(file_name)
     dict_data = list_to_dict(read_file)
     writ_to_file("warmup_file.json", dict_data)
+    print(dict_conv("warmup_file.json"))
 main()
 
 """
