@@ -31,16 +31,25 @@ def dict_conv(output_file):
     with open(output_file, 'r') as dict_file:
         read_file = dict_file.read()
         dict_list = json.loads(read_file)
-        jane_smith = dict_list[1]
-        return jane_smith
-            
+        return dict_list
+
+def ind_search(list_data, profile_name):
+    for search_list in list_data:
+        if search_list.get("Name") == profile_name:
+            print(search_list.get("Interests"))
+            break
+    else:
+        print("This user does not exist.")
+
         
 def main():
     file_name = "Data.txt"
     read_file = read_from_file(file_name)
     dict_data = list_to_dict(read_file)
     writ_to_file("warmup_file.json", dict_data)
-    print(dict_conv("warmup_file.json"))
+    list_dict = dict_conv("warmup_file.json")
+    user_input = input("Enter username you want to find. ")
+    ind_search(list_dict, user_input)
 main()
 
 """
