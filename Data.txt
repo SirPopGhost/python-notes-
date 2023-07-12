@@ -1,0 +1,14 @@
+Name: John Doe
+Age: 25
+Email: johndoe@example.com
+Interests: Sports, Music
+
+Name: Jane Smith
+Age: 30
+Email: janesmith@example.com
+Interests: Reading, Cooking
+
+Name: Michael Johnson
+Age: 35
+Email: michaeljohnson@example.com
+Interests: Traveling, Photography
